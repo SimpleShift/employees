@@ -5,12 +5,12 @@ language: java
 dist: trusty
 jdk:
 - openjdk8
-#cache:
-#directories:
-#- $HOME/.m2
+cache:
+directories:
+- $HOME/.m2
 script:
 - mvn clean package -U
-- docker build -t simpleshift/employees .
+- docker build -t kr3037/simpleshift-employees .
 after_success:
-- docker login -u="kr3037" -p="rsoSimpleShift"
-- docker push kr3037/simpleshift/employees
+- docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+- docker push kr3037/simpleshift-employees
