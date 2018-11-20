@@ -13,4 +13,4 @@ script:
 - docker build -t simpleshift/employees .
 after_success:
 - docker login -u="kr3037" -p="rsoSimpleShift"
-- docker push simpleshift/employees
+- docker push kr3037/simpleshift/employees
