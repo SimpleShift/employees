@@ -11,8 +11,15 @@ import java.util.List;
 public class EmployeeResource {
 
     @GET
-    public Response getAllEmployees() {
-        List<Employee> employees = Database.getEmployees();
+    public Response getAllEmployees(@DefaultValue("0") @QueryParam("locationId") String locationId) {
+
+        List<Employee> employees;
+
+        if (locationId.equals("0")){
+            employees = Database.getEmployees();
+        } else{
+            employees = Database.getEmployeesFrom(locationId);
+        }
         return Response.ok(employees).build();
     }
 

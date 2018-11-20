@@ -3,14 +3,23 @@ package com.simpleshift.app.employees;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Database {
+class Database {
     private static List<Employee> employees = new ArrayList<Employee>();
 
-    public static List<Employee> getEmployees() {
+    static List<Employee> getEmployees() {
         return employees;
     }
 
-    public static Employee getEmployee(String id) {
+    static List<Employee> getEmployeesFrom(String locationId) {
+        List<Employee> ret = new ArrayList<Employee>();
+        for (Employee e : employees) {
+            if (e.getLocationId().equals(locationId))
+                ret.add(e);
+        }
+        return ret;
+    }
+
+    static Employee getEmployee(String id) {
         for (Employee e : employees) {
             if (e.getId().equals(id))
                 return e;
@@ -19,11 +28,13 @@ public class Database {
         return null;
     }
 
-    public static void addEmployee(Employee e) {
+
+
+    static void addEmployee(Employee e) {
         employees.add(e);
     }
 
-    public static void deleteEmployee(String id) {
+    static void deleteEmployee(String id) {
         for (Employee e : employees) {
             if (e.getId().equals(id)) {
                 employees.remove(e);
