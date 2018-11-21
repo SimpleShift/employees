@@ -1,6 +1,6 @@
 package com.simpleshift.app.employees;
 
-class Employee {
+public class Employee {
 
 
     private String id;
@@ -8,35 +8,35 @@ class Employee {
     private String lastName;
     private String locationId;
 
-    String getId() {
+    public String getId() {
         return id;
     }
 
-    void setId(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    String getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    void setFirstName(String firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    String getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    void setLastName(String lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    String getLocationId() {
+    public String getLocationId() {
         return locationId;
     }
 
-    void setLocationId(String locationId) {
+    public void setLocationId(String locationId) {
         this.locationId = locationId;
     }
 
