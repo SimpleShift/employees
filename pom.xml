@@ -12,6 +12,9 @@
 
         <kumuluzee.version>3.0.0</kumuluzee.version>
 
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
     </properties>
 
 
