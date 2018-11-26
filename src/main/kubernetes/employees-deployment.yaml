@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: employees-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: employees
+  template:
+    metadata:
+      labels:
+        app: employees
+    spec:
+      containers:
+      - image: kr3037/simpleshift-employees
+        name: employees
+        ports:
+        - containerPort: 8080
+          name: server
+          protocol: TCP
