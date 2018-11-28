@@ -1,16 +1,18 @@
 sudo: required
 services:
-- docker
+  - docker
 language: java
 dist: trusty
 jdk:
-- openjdk8
+  - openjdk8
 cache:
-directories:
-- $HOME/.m2
+  directories:
+    - $HOME/.m2
+env:
+  - DOCKER_IMAGE=kr3037/simpleshift-employees:0.02
 script:
-- mvn clean package -U
-- docker build -t kr3037/simpleshift-employees:0.01 .
+  - mvn clean package -U
+  - docker build -t "$DOCKER_IMAGE" .
 after_success:
-- docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-- docker push kr3037/simpleshift-employees:0.01
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push "$DOCKER_IMAGE"
