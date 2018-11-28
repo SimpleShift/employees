@@ -10,7 +10,7 @@ directories:
 - $HOME/.m2
 script:
 - mvn clean package -U
-- docker build -t kr3037/simpleshift-employees .
+- docker build -t kr3037/simpleshift-employees:0.01 .
 after_success:
 - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-- docker push kr3037/simpleshift-employees
+- docker push kr3037/simpleshift-employees:0.01
