@@ -13,7 +13,7 @@ spec:
         app: employees
     spec:
       containers:
-      - image: kr3037/simpleshift-employees:0.02
+      - image: kr3037/simpleshift-employees:latest
         name: employees
         ports:
         - containerPort: 8080
