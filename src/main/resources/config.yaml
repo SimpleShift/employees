@@ -13,11 +13,11 @@ kumuluzee:
     start-retry-delay-ms: 500
     max-retry-delay-ms: 900000
     etcd:
-      hosts: http://159.122.187.27:32132
+      hosts: http://etcd:2379
 
   discovery:
     etcd:
-      hosts: http://159.122.187.27:32132
+      hosts: http://etcd:2379
     ttl: 20
     ping-interval: 15
 
