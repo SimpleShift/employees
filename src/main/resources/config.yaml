@@ -21,6 +21,13 @@ kumuluzee:
     ttl: 20
     ping-interval: 15
 
+  metrics:
+    web-instrumentation:
+    - name: employees-endpoint
+      url-pattern: /v1/employees/*
+    - name: demo-endpoint
+      url-pattern: /v1/demo/*
+
 app-properties:
   external-services:
     enabled: true

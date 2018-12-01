@@ -1,6 +1,7 @@
 package com.simpleshift.app.employees;
 
 import com.kumuluz.ee.discovery.annotations.DiscoverService;
+import org.eclipse.microprofile.metrics.annotation.Timed;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
@@ -35,7 +36,7 @@ public class EmployeeResource {
 
 
 
-
+    @Timed
     @GET
     public Response getAllEmployees(@DefaultValue("0") @QueryParam("locationId") String locationId) {
 

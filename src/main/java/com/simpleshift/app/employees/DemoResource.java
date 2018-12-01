@@ -1,6 +1,8 @@
 package com.simpleshift.app.employees;
 
 import com.kumuluz.ee.common.runtime.EeRuntime;
+import org.eclipse.microprofile.metrics.annotation.Timed;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.json.Json;
@@ -30,6 +32,8 @@ public class DemoResource {
         return Response.ok().build();
     }
     @POST
+
+    @Timed
     @Path("load")
     public Response loadOrder(LoadDto load) {
         for (int i = 1; i <= load.getN(); i++) {
@@ -38,6 +42,7 @@ public class DemoResource {
         return Response.status(Response.Status.OK).build();
     }
 
+    @Timed(name = "fibonacci") // Ne prikazuje, zakaj?
     private long fibonacci(int n) {
         if (n <= 1) return n;
         else return fibonacci(n - 1) + fibonacci(n - 2);
