@@ -1,6 +1,7 @@
 package com.simpleshift.app.employees;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 class Database {
@@ -38,6 +39,17 @@ class Database {
         for (Employee e : employees) {
             if (e.getId().equals(id)) {
                 employees.remove(e);
+                break;
+            }
+        }
+    }
+
+    static void logTime(String id, ArrayList<Date> hoursWorked){
+        for (Employee e : employees) {
+            if (e.getId().equals(id)) {
+
+                e.addHoursWorked(hoursWorked);
+
                 break;
             }
         }

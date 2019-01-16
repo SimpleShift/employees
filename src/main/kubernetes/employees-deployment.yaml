@@ -13,7 +13,7 @@ spec:
         app: employees
     spec:
       containers:
-      - image: kr3037/simpleshift-employees:0.10
+      - image: kr3037/simpleshift-employees:0.11
         name: employees
         env:
         - name: KUMULUZEE_DISCOVERY_CLUSTER

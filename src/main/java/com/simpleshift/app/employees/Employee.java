@@ -1,5 +1,9 @@
 package com.simpleshift.app.employees;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 public class Employee {
 
 
@@ -7,6 +11,7 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String locationId;
+    private ArrayList<ArrayList<Date>> hoursWorked = new ArrayList();
 
     public String getId() {
         return id;
@@ -40,4 +45,16 @@ public class Employee {
         this.locationId = locationId;
     }
 
+
+    public ArrayList<ArrayList<Date>> getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public void setHoursWorked(ArrayList<ArrayList<Date>> hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
+
+    public void addHoursWorked(ArrayList<Date> hours){
+        hoursWorked.add(hours);
+    }
 }
