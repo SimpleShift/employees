@@ -129,7 +129,7 @@ public class EmployeeResource {
 
 
                 Date openingDate = new GregorianCalendar(startYear, startMonth, startDay, openingHour, 0).getTime();
-                Date closingDate = new GregorianCalendar(startYear, startMonth, startDay, closingHour, 0).getTime();
+                Date closingDate = new GregorianCalendar(endYear, endMonth, endDay, closingHour, 0).getTime();
 
                 Calendar c = Calendar.getInstance();
                 c.setTime(startDate);
@@ -138,7 +138,7 @@ public class EmployeeResource {
                     dayOfWeek = 7;
                 }
 
-                if (openDays.contains(dayOfWeek) && startDate.after(openingDate) & endDate.before(closingDate)){
+                if (startDate.before(endDate) && openDays.contains(dayOfWeek) && startDate.after(openingDate) & endDate.before(closingDate)){
                     ArrayList<Date> logData = new ArrayList<>();
                     logData.add(startDate);
                     logData.add(endDate);
